@@ -1,5 +1,5 @@
 {
-  "name": "d3-axis",
+  "name": "@krisdages/d3-axis",
   "version": "3.0.0",
   "description": "Displays automatic reference lines for scales.",
   "homepage": "https://d3js.org/d3-axis/",
@@ -35,8 +35,8 @@
   },
   "sideEffects": false,
   "devDependencies": {
-    "d3-scale": "2 - 4",
-    "d3-selection": "1 - 3",
+    "d3-scale": "npm:@krisdages/d3-scale@<5",
+    "d3-selection": "npm:@krisdages/d3-selection@<4",
     "eslint": "7",
     "js-beautify": "1",
     "jsdom": "16",
@@ -46,8 +46,7 @@
   },
   "scripts": {
     "test": "mocha 'test/**/*-test.js' && eslint src test",
-    "prepublishOnly": "rm -rf dist && yarn test && rollup -c && git push",
-    "postpublish": "git push --tags && cd ../d3.github.com && git pull && cp ../${npm_package_name}/dist/${npm_package_name}.js ${npm_package_name}.v${npm_package_version%%.*}.js && cp ../${npm_package_name}/dist/${npm_package_name}.min.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git add ${npm_package_name}.v${npm_package_version%%.*}.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git commit -m \"${npm_package_name} ${npm_package_version}\" && git push && cd -"
+    "prepublishOnly": "rm -rf dist && yarn test && rollup -c"
   },
   "engines": {
     "node": ">=12"
